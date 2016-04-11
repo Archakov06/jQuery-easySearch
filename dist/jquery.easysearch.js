@@ -1,6 +1,6 @@
 /* 
- * jQuery-LightSearch - v1.0 - 2016-04-11
- * https://github.com/Archakov06/jQuery-LightSearch
+ * jQuery-easySearch - v1.0 - 2016-04-11
+ * https://github.com/Archakov06/jQuery-easySearch
  * http://archakov.im/
  * Released under the MIT License
 */
