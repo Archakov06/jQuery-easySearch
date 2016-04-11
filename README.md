@@ -10,10 +10,10 @@ A jQuery plug-in for filtering elements with user input.
 	    selector  : 'ul',
 	    child : 'li div.header',
 	    minValLength: 0,
-	    Found : function(elem, event){
+	    Found : function(elem){
 	        $(elem).parent().parent().show();
 	    },
-	    NotFound : function(elem, event){
+	    NotFound : function(elem){
 	        $(elem).parent().parent().hide();
 	    },
 	    After : function(t){
@@ -31,11 +31,11 @@ A jQuery plug-in for filtering elements with user input.
 	    Before: function(){
 	    	$('table tr').data('find','');
 	    },
-	    Found : function(elem, event){
+	    Found : function(elem){
 	    	$(elem).parent().data('find','true');
 	        $(elem).parent().show();
 	    },
-	    NotFound : function(elem, event){
+	    NotFound : function(elem){
 	    	if (!$(elem).parent().data('find'));
 	        $(elem).parent().hide();
 	    },
