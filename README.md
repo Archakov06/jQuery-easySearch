@@ -11,8 +11,8 @@ A jQuery plug-in for filtering elements with user input.
 #### Example #1
 ```js
 $('input').jSearch({ 
-    selector  : 'table',
-    child : 'td',
+    selector  : 'ul',
+    child : 'li',
     Found : function(elem, event){
     	$(elem).show();
     },
@@ -25,8 +25,8 @@ $('input').jSearch({
 #### Example #2
 ```js
 $('input').jSearch({ 
-	selector  : 'table',
-	child : 'td',
+	selector  : 'ul',
+	child : 'li',
 	minValLength: 2,
 	Found : function(elem, event){
   		$(elem).show();
