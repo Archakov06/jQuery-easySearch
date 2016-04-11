@@ -13,10 +13,10 @@ A jQuery plug-in for filtering elements with user input.
 $('input').jSearch({ 
     selector  : 'table',
     child : 'td',
-    onFound : function(elem, event){
+    Found : function(elem, event){
     	$(elem).show();
     },
-    onNotFound : function(elem, event){
+    NotFound : function(elem, event){
     	$(elem).hide();
     }
 });
@@ -25,21 +25,22 @@ $('input').jSearch({
 #### Example #2
 ```js
 $('input').jSearch({ 
-    selector  : 'table',
-    child : 'td',
-    minValLength: 2,
-    onAfter : function(t){
-      alert('after callback!');
-    },
-    onBefore : function(){
-    	alert('before callback!');
-    },
-    onFound : function(elem, event){
-    	$(elem).show();
-    },
-    onNotFound : function(elem, event){
-    	$(elem).hide();
-    }
+	selector  : 'table',
+	child : 'td',
+	minValLength: 2,
+	Found : function(elem, event){
+  		$(elem).show();
+	},
+	NotFound : function(elem, event){
+  		$(elem).hide();
+	},
+	Before : function(t){
+  		alert('before callback!');
+	},
+	After : function(t){
+		alert('after callback!');
+  		//if (!t.val().length) $('table td').show();
+	}
 });
 ```
 
