@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search in list</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
+</head>
+<body>
+
+<style>
+	.container {
+		width: 50%;
+		margin: 50px auto;
+	}
+	.column {
+		margin-bottom: 20px;
+	}
+	div.input {
+		width: 100%;
+	}
+	li:before {display: none;}
+	ul.ui.list {margin-left: 0}
+</style>
+
+<div class="ui container">
+
+<div class="column">
+	<ul class="ui middle aligned selection list">
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/helen.jpg">
+	    <div class="content">
+	      <div class="header">Helen</div>
+	    </div>
+	  </li>
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/christian.jpg">
+	    <div class="content">
+	      <div class="header">Christian</div>
+	    </div>
+	  </li>
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/daniel.jpg">
+	    <div class="content">
+	      <div class="header">Daniel</div>
+	    </div>
+	  </li>
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/christian.jpg">
+	    <div class="content">
+	      <div class="header">Marybelle</div>
+	    </div>
+	  </li>
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/helen.jpg">
+	    <div class="content">
+	      <div class="header">Joeann</div>
+	    </div>
+	  </li>
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/christian.jpg">
+	    <div class="content">
+	      <div class="header">Fallon</div>
+	    </div>
+	  </li>
+	  <li class="item">
+	    <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/daniel.jpg">
+	    <div class="content">
+	      <div class="header">Arturo</div>
+	    </div>
+	  </li>
+	</ul>
+</div>
+
+<div class="column">
+	<div class="ui input focus">
+	  <input type="text" placeholder="Search...">
+	</div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="../dist/jquery.lightsearch.js"></script>
+<script>
+	$('input').jSearch({ 
+	    selector  : 'ul',
+	    child : 'li div.header',
+	    minValLength: 0,
+	    Found : function(elem, event){
+	        $(elem).parent().parent().show();
+	    },
+	    NotFound : function(elem, event){
+	        $(elem).parent().parent().hide();
+	    },
+	    After : function(t){
+	        if (!t.val().length) $('ul li').show();
+	    }
+	});
+</script>
+</body>
+</html>

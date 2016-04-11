@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search in table</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
+</head>
+<body>
+
+<style>
+	.container {
+		width: 50%;
+		margin: 50px auto;
+	}
+	.column {
+		margin-bottom: 20px;
+	}
+	div.input {
+		width: 100%;
+	}
+</style>
+
+<div class="ui container">
+
+<div class="column">
+	<table class="ui table">
+		<tbody>
+			<thead>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>E-Mail</th>
+			</thead>
+			<tr>
+				<td>Kathlyn</td>
+				<td>Griffeth</td>
+				<td>disputably@rel.co.uk</td>
+			</tr>
+			<tr>
+				<td>Jerrica</td>
+				<td>Alsop</td>
+				<td>remagnification@bloomingness.edu</td>
+			</tr>
+			<tr>
+				<td>Edwina</td>
+				<td>Belgrave</td>
+				<td>tonsilectomy@crookfingered.net</td>
+			</tr>
+			<tr>
+				<td>Wendie</td>
+				<td>Nickelson</td>
+				<td>heterophagous@interminable.net</td>
+			</tr>
+			<tr>
+				<td>Sharan</td>
+				<td>Abate</td>
+				<td>nohow@epicheirema.co.uk</td>
+			</tr>
+			<tr>
+				<td>Cammie</td>
+				<td>Merone</td>
+				<td>hawthorned@xerophagia.co.uk</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="column">
+	<div class="ui input focus">
+	  <input type="text" placeholder="Search...">
+	</div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="../dist/jquery.lightsearch.js"></script>
+<script>
+	$('input').jSearch({ 
+	    selector  : 'table',
+	    child : 'tr > td',
+	    minValLength: 0,
+	    Before: function(){
+	    	$('table tr').data('find','');
+	    },
+	    Found : function(elem, event){
+	    	$(elem).parent().data('find','true');
+	        $(elem).parent().show();
+	    },
+	    NotFound : function(elem, event){
+	    	if (!$(elem).parent().data('find'));
+	        $(elem).parent().hide();
+	    },
+	    After : function(t){
+	        if (!t.val().length) $('table tr').show();
+	    }
+	});
+</script>
+</body>
+</html>
