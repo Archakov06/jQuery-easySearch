@@ -64,8 +64,10 @@ A jQuery plug-in for filtering elements with user input.
 	
 
 ## Contacts
-E-Mail: <archakov@gatafan.com>
-Website: <archakov.im>
+* 	**E-Mail**
+	<archakov@gatafan.com>
+* 	**Website**
+	<http://archakov.im>
 
 ## License
 
