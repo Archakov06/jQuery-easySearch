@@ -1,10 +1,6 @@
-# jQuery-LightSearch
+# jQuery-easySearch
 
 A jQuery plug-in for filtering elements with user input.
-
-## Demo
-
-* <http://archakov.im/examples/jquery-lightsearch>
 
 ## Usage
 
@@ -66,6 +62,10 @@ A jQuery plug-in for filtering elements with user input.
 *	**onAfter**
 	Function to call after trigger is called
 	
+
+## Contacts
+E-Mail: <archakov@gatafan.com>
+Website: <archakov.im>
 
 ## License
 
