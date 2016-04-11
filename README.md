@@ -8,40 +8,45 @@ A jQuery plug-in for filtering elements with user input.
 
 ## Usage
 
-#### Example #1
+#### Example #1: UL
 ```js
-$('input').jSearch({ 
-    selector  : 'ul',
-    child : 'li',
-    Found : function(elem, event){
-    	$(elem).show();
-    },
-    NotFound : function(elem, event){
-    	$(elem).hide();
-    }
-});
+	$('input').jSearch({ 
+	    selector  : 'ul',
+	    child : 'li div.header',
+	    minValLength: 0,
+	    Found : function(elem, event){
+	        $(elem).parent().parent().show();
+	    },
+	    NotFound : function(elem, event){
+	        $(elem).parent().parent().hide();
+	    },
+	    After : function(t){
+	        if (!t.val().length) $('ul li').show();
+	    }
+	});
 ```
 
-#### Example #2
+#### Example #2: Table
 ```js
-$('input').jSearch({ 
-	selector  : 'ul',
-	child : 'li',
-	minValLength: 2,
-	Found : function(elem, event){
-  		$(elem).show();
-	},
-	NotFound : function(elem, event){
-  		$(elem).hide();
-	},
-	Before : function(t){
-  		alert('before callback!');
-	},
-	After : function(t){
-		alert('after callback!');
-  		//if (!t.val().length) $('table td').show();
-	}
-});
+	$('input').jSearch({ 
+	    selector  : 'table',
+	    child : 'tr > td',
+	    minValLength: 0,
+	    Before: function(){
+	    	$('table tr').data('find','');
+	    },
+	    Found : function(elem, event){
+	    	$(elem).parent().data('find','true');
+	        $(elem).parent().show();
+	    },
+	    NotFound : function(elem, event){
+	    	if (!$(elem).parent().data('find'));
+	        $(elem).parent().hide();
+	    },
+	    After : function(t){
+	        if (!t.val().length) $('table tr').show();
+	    }
+	});
 ```
 
 ## Options
