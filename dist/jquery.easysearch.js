@@ -1,7 +1,6 @@
 /* 
- * jQuery-easySearch - v1.0 - 2016-04-11
- * https://github.com/Archakov06/jQuery-easySearch
- * http://archakov.im/
+ * jQuery-LightSearch - v1.0 - 2016-04-11
+ * https://github.com/Archakov06/jQuery-LightSearch
  * Released under the MIT License
 */
 
@@ -12,8 +11,8 @@
 			selector: null,
 			child: null,
     	minValLength: 3,
-			Found: function(elem, event){},
-			NotFound: function(elem, event){},
+			Found: function(elem){},
+			NotFound: function(elem){},
 			Before: function(t){},
 			After: function(t){},
 		};
@@ -25,18 +24,18 @@
     { console.error( 'One of the parameters is incorrect.' ); return false; }
     
     
-   	$this.on( 'keyup', function(event){
+   	$this.on( 'keyup', function(){
     	
       options.Before($this);
       
       if ( $(this).val().length >= options.minValLength ) {
         console.clear();
 
-        $( options.selector ).find( options.child ).each(function( event ){
+        $( options.selector ).find( options.child ).each(function( ){
           if ( this.innerText.toLowerCase().indexOf( $this.val().toLowerCase() ) == -1 ) {
-              options.NotFound( this, event );
+              options.NotFound( this );
           } else {
-            options.Found( this, event );
+            options.Found( this );
           }
 
         });
