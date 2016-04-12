@@ -36,7 +36,7 @@ A jQuery plug-in for filtering elements with user input.
 	        $(elem).parent().show();
 	    },
 	    NotFound : function(elem){
-	    	if (!$(elem).parent().data('find'));
+	    	if (!$(elem).parent().data('find'))
 	        $(elem).parent().hide();
 	    },
 	    After : function(t){
