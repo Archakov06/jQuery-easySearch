@@ -1,0 +1,10 @@
+{
+  "name": "jQuery-easySearch",
+  "description": "A jQuery plug-in for filtering elements with user input.",
+  "version": "1.0.0",
+  "homepage": "http://archakov.im/post/jquery-easysearch.html",
+  "author": {
+  	"name": "Archakov Dennis",
+  	"email": "archakov@gatafan.com"
+  }
+}
