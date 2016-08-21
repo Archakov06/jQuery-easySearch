@@ -2,6 +2,8 @@
 
 A jQuery plug-in for filtering elements with user input.
 
+![Example work](http://archakov.im/uploads/search-in-list_480db9c7.gif)
+
 ## Usage
 
 #### Example #1: UL
